@@ -6,6 +6,7 @@ const useStyles = makeStyles({
     root: {
         height: "100vh",
         backgroundColor: '#182233',
+        backgroundImage: 'url(https://www.panintelligence.com/wp-content/uploads/2020/09/home-bars.svg)'
     },
     nav: {
         height: "10vh",
@@ -22,7 +23,9 @@ const useStyles = makeStyles({
     inputPaper: {
         padding: '10px',
         backgroundColor: '#222c3c',
-        border: '2px solid #f8457a'
+        border: '2px solid #f8457a',
+        position: "absolute",
+        top: 220
     }
 })
 
@@ -35,7 +38,7 @@ const MainLayout = () => {
                     <Typography className={classes.title} variant="h3"><strong>Pan</strong>Travel</Typography>
                 </Paper>
             </Grid>
-            <Grid container item xs={8} justify="center" alignContent="center">
+            <Grid container item xs={8} justify="center" >
                 <Paper className={classes.inputPaper}>
                     <Input />
                 </Paper>
