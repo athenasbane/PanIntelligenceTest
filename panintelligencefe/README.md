@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# PanTravel - Front End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+PanTravel is a web application to allow users to find the cheapest route between their homes to a destination and back again. As defined by a technical challenge given by PanIntelligence for their Junior Engineer position.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This application receives data from a REST API. Users can select their route from the front page then, submit to receive the cheapest route on the results modal.
 
-### `npm start`
+## Visual Choices
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I wanted to maintain visual links to PanIntelligence's new website design. (panintelligence.com)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I designed this site to be "mobile first" however it is responsive so should work on all screens. There are some issues with the visuals on screen sizes smaller than 500px height. This does not effect functionality.
 
-### `npm test`
+## Function
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I have made this application data driven so if additional flights are added or taken away the options given to users is automatically updated. I thought this is would reduce front end development time in the long run should this be used in real life scenario where flights and destinations change regularly.
 
-### `npm run build`
+I have tried to make sure that all error cases are caught.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If the backend is not working there is an error screen that recommends refresh until a connection can be reached.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I have attempted to make the code as DRY as possible using components multiple times where possible. There is more than can be done on this, for instance I would have liked to use a single modal component for both results and errors.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `npm run eject`
+Please make sure to update tests as appropriate.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## License
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[MIT](https://choosealicense.com/licenses/mit/)
