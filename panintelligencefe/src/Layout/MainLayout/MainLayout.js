@@ -1,5 +1,6 @@
 import React from 'react';
-import { Grid, makeStyles, Paper, Typography } from '@material-ui/core';
+import { Grid, makeStyles, Paper, Typography, Slide } from '@material-ui/core';
+import AirplanemodeActiveIcon from '@material-ui/icons/AirplanemodeActive';
 import Input from '../../Components/Input/Input';
 
 const useStyles = makeStyles({
@@ -15,6 +16,9 @@ const useStyles = makeStyles({
   title: {
     color: '#f8457a',
   },
+  titleTwo: {
+    color: '#d81251',
+  },
   paper: {
     width: '100vw',
     textAlign: 'center',
@@ -26,7 +30,13 @@ const useStyles = makeStyles({
     backgroundColor: '#222c3c',
     border: '2px solid #f8457a',
     position: 'absolute',
-    top: 220,
+    top: '26%',
+  },
+  icon: {
+    color: 'white',
+    width: '30px',
+    height: '30px',
+    margin: '10px',
   },
 });
 
@@ -36,9 +46,23 @@ const MainLayout = () => {
     <Grid className={classes.root} container justify="center">
       <Grid className={classes.nav} container item xs="auto">
         <Paper className={classes.paper}>
-          <Typography className={classes.title} variant="h3">
-            <strong>Pan</strong>Travel
-          </Typography>
+          <Grid container direction="row" justify="center" alignItems="center">
+            <Grid item>
+              <Typography className={classes.title} variant="h3">
+                <strong>Pan</strong>
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Slide direction="up" in timeout={1000}>
+                <AirplanemodeActiveIcon className={classes.icon} />
+              </Slide>
+            </Grid>
+            <Grid item>
+              <Typography className={classes.titleTwo} variant="h3">
+                Travel
+              </Typography>
+            </Grid>
+          </Grid>
         </Paper>
       </Grid>
       <Grid container item xs={8} justify="center">

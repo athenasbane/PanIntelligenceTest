@@ -3,6 +3,7 @@ import { Grid, makeStyles, TextField, Button, Typography } from '@material-ui/co
 import { backendUrl } from '../../constants';
 import ResultsModal from '../ResultsModal/ResultsModal';
 import Selector from './Selector';
+import ErrorModal from './ErrorModal';
 
 const useStyles = makeStyles({
   formControl: {
@@ -35,6 +36,7 @@ const Input = () => {
     disToAirport: '',
   });
   const [resultsModalOpen, setResultsModalOpen] = React.useState(false);
+  const [errorModalOpen, setErrorModalOpen] = React.useState(false);
   const [airportData, setAirportData] = React.useState(['A', 'B', 'C', 'D', 'E', 'F']);
   const [routeData, setRouteData] = React.useState({});
 
@@ -44,7 +46,7 @@ const Input = () => {
       const data = await response.json();
       setAirportData(['', ...data]);
     } catch (e) {
-      console.log(e);
+      setErrorModalOpen(true);
     }
   };
 
@@ -60,7 +62,7 @@ const Input = () => {
       const data = await response.json();
       setRouteData(data);
     } catch (e) {
-      console.log(e);
+      setErrorModalOpen(true);
     }
   };
 
@@ -92,6 +94,7 @@ const Input = () => {
           <Grid item>
             <TextField
               InputLabelProps={{ style: { color: 'white' } }}
+              inputProps={{ style: { color: 'white' }, min: 1 }}
               className={classes.input}
               name="passengers"
               color="secondary"
@@ -115,6 +118,7 @@ const Input = () => {
           <Grid item>
             <TextField
               InputLabelProps={{ style: { color: 'white' } }}
+              inputProps={{ style: { color: 'white' }, min: 1 }}
               className={classes.input}
               name="disToAirport"
               color="secondary"
@@ -152,6 +156,7 @@ const Input = () => {
         resultsData={routeData}
         close={() => setResultsModalOpen(false)}
       />
+      <ErrorModal open={errorModalOpen} close={() => setErrorModalOpen(false)} />
     </Grid>
   );
 };

@@ -38,7 +38,7 @@ const ToTheAirport = ({ isMobile, resultsData }) => {
       </Grid>
       <Grid item md={4}>
         <Typography className={classes.text}>
-          <strong>Getting Too The Airport and Back</strong>
+          <strong>Getting To The Airport and Back</strong>
         </Typography>
       </Grid>
       <Grid item md={4}>

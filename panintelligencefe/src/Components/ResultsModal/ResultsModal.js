@@ -73,6 +73,7 @@ const ResultsModal = ({ open, close, resultsData }) => {
 
   return (
     <Modal
+      className={classes.modal}
       open={open}
       onClose={close}
       aria-labelledby="search-results"

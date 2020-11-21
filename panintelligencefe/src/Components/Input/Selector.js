@@ -38,6 +38,7 @@ const Selector = ({ airportData, formData, handleChange, isStart }) => {
       <Select
         className={classes.select}
         native
+        inputProps={{ style: { color: 'white', borderLeft: '1px solid #f8457a' } }}
         name={isStart ? 'start' : 'finish'}
         color="secondary"
         labelId="select-outlined-label"
