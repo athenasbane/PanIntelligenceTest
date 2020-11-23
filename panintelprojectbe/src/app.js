@@ -21,6 +21,29 @@ app.post('/', async (req, res) => {
     } = req.body;
     const airportDist = `${start}${disToAirport}`;
     const data = journeyCalc(passengers, airportDist, finish);
+
+    const dataify = (journeyData) => {
+      const {
+        inboundCost, outboundCost, inboundRoute, outboundRoute, vehicle, vehicleReturnCost, totalCost,
+      } = journeyData;
+
+      const result = {};
+
+      switch (inboundCost) {
+        case 0: {
+          result.inboundCost = {
+            style: 'error', direction: 'Inbound', icon: 'noflight', cost: 0, route: null,
+          };
+          break;
+        }
+        default: {
+          return {
+            style: 'found', direction: 'Inbound', icon: 'flight', cost: inboundCost, route: inboundRoute.join('-'),
+          };
+        }
+      }
+    };
+
     res.status(200).send(data);
   } catch (e) {
     res.status(500);

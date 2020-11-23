@@ -35,7 +35,7 @@ const useStyles = makeStyles({
   },
 });
 
-const ErrorModal = ({ open, close }) => {
+const ErrorModal = ({ open }) => {
   const classes = useStyles();
   const body = (
     <Paper className={classes.paper}>
@@ -59,7 +59,7 @@ const ErrorModal = ({ open, close }) => {
   return (
     <Modal
       open={open}
-      onClose={close}
+      onClose
       aria-labelledby="search-results"
       aria-describedby="results-of-travel-search"
     >
@@ -70,7 +70,6 @@ const ErrorModal = ({ open, close }) => {
 
 ErrorModal.propTypes = {
   open: PropTypes.bool,
-  close: PropTypes.func,
 };
 
 export default ErrorModal;

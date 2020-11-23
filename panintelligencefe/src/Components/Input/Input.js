@@ -156,7 +156,7 @@ const Input = () => {
         resultsData={routeData}
         close={() => setResultsModalOpen(false)}
       />
-      <ErrorModal open={errorModalOpen} close={() => setErrorModalOpen(false)} />
+      <ErrorModal open={errorModalOpen} />
     </Grid>
   );
 };
